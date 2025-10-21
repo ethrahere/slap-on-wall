@@ -47,9 +47,10 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const forwardedFor = request.headers.get("x-forwarded-for");
   const ip =
-    request.ip ??
-    request.headers.get("x-forwarded-for")?.split(",").shift() ??
+    forwardedFor?.split(",").shift()?.trim() ??
+    request.headers.get("x-real-ip") ??
     "0.0.0.0";
   const ipHash = hashIp(ip);
 
