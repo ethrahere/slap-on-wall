@@ -14,6 +14,7 @@ import PostItDetailModal from "@/components/wall/PostItDetailModal";
 import FloatingActionButton from "@/components/wall/FloatingActionButton";
 import SocialProofCounter from "@/components/wall/SocialProofCounter";
 import RecentActivityToast from "@/components/wall/RecentActivityToast";
+import { sdk } from "@farcaster/miniapp-sdk";
 
 type ShefiWallProps = {
   initialPostIts: PostIt[];
@@ -51,6 +52,10 @@ export default function ShefiWall({
   );
 
   const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    sdk.actions.ready();
+  }, []);
 
   const vibeMessage = useMemo(() => describeCurrentVibe(new Date()), []);
 

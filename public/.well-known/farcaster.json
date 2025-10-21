@@ -1,0 +1,22 @@
+{
+    "miniapp": {
+      "version": "1",
+      "name": "Slap on the wall Mini App",
+      "homeUrl": "https://slap-on-wall.vercel.app/",
+      "iconUrl": "https://slap-on-wall.vercel.app/icon.png",
+      "splashImageUrl": "https://slap-on-wall.vercel.app/icon.png",
+      "splashBackgroundColor": "#8B5CF6",
+      "subtitle": "SheFi post-it wall",
+      "description": "A fun way to share thoughts anonymously with SheFi",
+      "primaryCategory": "social",
+      "tags": ["SheFi", "community", "fun"],
+      "heroImageUrl": "https://slap-on-wall.vercel.app/hero.png",
+      "tagline": "SheFi post-it wall",
+      "ogTitle": "SheFi post-it wall",
+      "ogDescription": "Share thoughts with SheFi community real time.",
+      "ogImageUrl": "https://slap-on-wall.vercel.app/splash.png"
+    },
+    "baseBuilder": {
+        "allowedAddresses": ["0xB435c073fB086C03D48F4C36b31d32BEe94cC0d1"]
+    }
+  }
