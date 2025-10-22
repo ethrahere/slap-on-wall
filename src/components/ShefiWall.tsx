@@ -29,6 +29,7 @@ const masonryBreakpoints = {
   1024: 3,
   768: 3,
   640: 2,
+  480: 1,
 };
 
 export default function ShefiWall({

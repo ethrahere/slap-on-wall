@@ -39,7 +39,7 @@ export default function PostItCard({
       whileHover={{ rotate: 0, scale: 1.02 }}
       initial={{ rotate: rotation }}
       className={clsx(
-        "group relative cursor-pointer rounded-xl p-6 font-handwriting text-[1.25rem] leading-snug text-shefi-ink shadow-[var(--shefi-card-shadow)] transition-all duration-300 group-hover:animate-[floaty_6s_ease-in-out_infinite]",
+        "group relative cursor-pointer rounded-xl p-4 font-handwriting text-lg leading-normal text-shefi-ink shadow-[var(--shefi-card-shadow)] transition-all duration-300 group-hover:animate-[floaty_6s_ease-in-out_infinite] sm:p-6 sm:text-[1.25rem] sm:leading-snug",
         post.isFresh
           ? "ring-4 ring-[rgba(236,72,153,0.6)] shadow-[0_0_32px_rgba(236,72,153,0.3)]"
           : "ring-2 ring-transparent",
@@ -48,8 +48,8 @@ export default function PostItCard({
       onClick={() => onSelect(post.id)}
     >
       <div className="absolute inset-0 rounded-xl bg-transparent transition duration-300 group-hover:bg-transparent" />
-      <div className="relative flex min-h-[180px] flex-col gap-4">
-        <p className="font-handwriting text-xl leading-relaxed text-shefi-ink">
+      <div className="relative flex min-h-[150px] flex-col gap-4 sm:min-h-[180px]">
+        <p className="font-handwriting text-lg leading-relaxed break-words text-shefi-ink sm:text-xl">
           {post.text}
         </p>
         <footer className="mt-auto flex flex-wrap items-center justify-between gap-3 text-sm font-sans text-shefi-ink-soft">
@@ -73,7 +73,7 @@ export default function PostItCard({
             }}
             whileTap={{ scale: 0.9 }}
             whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center gap-2 rounded-full bg-[rgba(255,255,255,0.6)] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-shefi-purple transition hover:bg-white"
+            className="inline-flex items-center gap-2 rounded-full bg-[rgba(255,255,255,0.6)] px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-shefi-purple transition hover:bg-white sm:px-3 sm:text-xs"
           >
             <span aria-hidden className="text-base transition-transform group-hover:scale-110">
               ❤️

@@ -61,6 +61,30 @@ body {
   margin-bottom: 1.5rem;
 }
 
+@media (max-width: 640px) {
+  .masonry-grid {
+    margin-left: -1rem;
+  }
+
+  .masonry-grid_column {
+    padding-left: 1rem;
+  }
+
+  .masonry-grid_column > div {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    margin-left: 0;
+  }
+
+  .masonry-grid_column {
+    padding-left: 0;
+  }
+}
+
 @keyframes floaty {
   0%,
   100% {
