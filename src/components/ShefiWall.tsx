@@ -86,11 +86,36 @@ export default function ShefiWall({
         { event: "INSERT", schema: "public", table: "postit" },
         (payload) => {
           const newPost = payload.new as PostIt;
-          setPostIts((current) => [
-            { ...newPost, isFresh: true, isOwn: ownedIds.includes(newPost.id) },
-            ...current,
-          ]);
-          setTotalCount((count) => count + 1);
+          let added = false;
+          setPostIts((current) => {
+            const existing = current.find((item) => item.id === newPost.id);
+
+            if (existing) {
+              return current.map((item) =>
+                item.id === newPost.id
+                  ? {
+                      ...item,
+                      ...newPost,
+                      isFresh: true,
+                      isOwn: ownedIds.includes(newPost.id) || item.isOwn,
+                    }
+                  : item,
+              );
+            }
+
+            added = true;
+            return [
+              {
+                ...newPost,
+                isFresh: true,
+                isOwn: ownedIds.includes(newPost.id),
+              },
+              ...current,
+            ];
+          });
+          if (added) {
+            setTotalCount((count) => count + 1);
+          }
           setActivityMessage("A queen just posted something delicious. 👀");
           scheduleFreshReset(newPost.id, setPostIts);
         },
